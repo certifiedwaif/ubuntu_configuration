@@ -15,10 +15,11 @@ Install zsh and Oh My Zsh
 	sudo apt install -y zsh
 	chsh markg -s /usr/bin/zsh
 	sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+	git clone git@github.com:certifiedwaif/zshrc.git
 
 Install vim, and vim configuration
 
-	sudo apt install -y vim
+	sudo apt install -y vim-gnome
 	cd ~/github.com && git clone https://github.com/certifiedwaif/vimrc.git
 	cp ~/github.com/vimrc/vimrc ~/.vimrc
 	mkdir -p ~/.vim/bundle/
@@ -104,3 +105,16 @@ Install R kernel for Jupyter notebooks
   Install libreadline6
     wget  http://mirrors.kernel.org/ubuntu/pool/main/r/readline6/libreadline6_6.3-8ubuntu2_amd64.deb
     sudo dpkg -i 
+
+Install Discord
+
+  https://discordapp.com/download
+
+Install SSH server
+
+  sudo apt install -y openssh-server
+
+Install Kubernetes
+
+    
+
