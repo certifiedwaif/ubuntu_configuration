@@ -83,11 +83,19 @@ Install Android Studio
 
 Install Dart and Flutter
 
+  sudo apt-get update
+  sudo apt-get install apt-transport-https
+  sudo sh -c 'curl https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add -'
+  sudo sh -c 'curl https://storage.googleapis.com/download.dartlang.org/linux/debian/dart_stable.list > /etc/apt/sources.list.d/dart_stable.list'
+  sudo apt-get update
+  sudo apt-get install dart
+
   https://flutter.dev/docs/get-started/install/linux
   Run `flutter doctor`
   Add $HOME/flutter/bin to PATH
   sudo apt-get install lib32stdc++6
   flutter doctor --android-licenses
+  export PATH="$PATH":"$HOME/flutter/.pub-cache/bin"
 
 Install R and RStudio
 
@@ -116,5 +124,60 @@ Install SSH server
 
 Install Kubernetes
 
-    
+  https://www.digitalocean.com/community/tutorials/how-to-create-a-kubernetes-cluster-using-kubeadm-on-ubuntu-16-04    
 
+Install lm_sensors, psensor and s-tui
+
+  sudo apt install -y lm-sensors hddtemp
+  sudo sensors-detect
+  sudo /etc/init.d/kmod start
+
+Install pip, stress
+
+  sudo apt install -y python-pip python3-pip stress
+  sudo pip3 install -y s-tui
+  sudo s-tui
+
+Install ansible
+
+  sudo apt install -y ansible
+
+Install tmux
+
+  sudo apt install -y tmux
+
+Install Google Drive Ocamlfuse
+
+  sudo add-apt-repository ppa:alessandro-strada/ppa
+  sudo apt update && sudo apt install google-drive-ocamlfuse
+  mkdir ~/google-drive
+  google-drive-ocamlfuse ~/google-drive
+
+Install latest version of R on Ubuntu Linux
+
+	echo "deb http://cran.stat.ucla.edu/bin/linux/ubuntu bionic-cran35/" | sudo tee -a /etc/apt/sources.list.d/cran.list
+	sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E084DAB9
+
+  sudo apt-get update
+  sudo apt-get install -y r-base r-base-dev
+  #
+  # To update any R libraries installed via APT.
+  #
+  sudo apt-get upgrade
+
+  sudo apt-get remove -y 'r-cran-*'
+
+  Rscript -e "update.packages(ask = FALSE)"
+
+Install ack
+
+  sudo apt install -y ack
+
+Install gcc-9
+
+  sudo add-apt-repository ppa:jonathonf/gcc-9.0
+  sudo apt-get install -y gcc-9
+
+Program NVidia GPUs with OpenMP
+
+  http://on-demand.gputechconf.com/gtc/2016/presentation/s6510-jeff-larkin-targeting-gpus-openmp.pdf
