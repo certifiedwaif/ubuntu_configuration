@@ -5,6 +5,9 @@ Install git
 	git config --global user.name "Mark Greenaway"
 	mkdir ~/github.com
 
+Create an ssh keypair and install on GitHub
+
+	ssh-keygen
 
 Install curl
 
@@ -37,7 +40,7 @@ Swap Capslock and Escape
 Install docker.io
 
 	sudo apt install -y docker.io
-	sudo usermod -aG ${USER} docker
+	sudo usermod -aG docker ${USER}
 
 Install Google Cloud SDK and initialise the SDK
 
@@ -118,10 +121,6 @@ Install Discord
 
   https://discordapp.com/download
 
-Install SSH server
-
-  sudo apt install -y openssh-server
-
 Install Kubernetes
 
   https://www.digitalocean.com/community/tutorials/how-to-create-a-kubernetes-cluster-using-kubeadm-on-ubuntu-16-04    
@@ -135,7 +134,7 @@ Install lm_sensors, psensor and s-tui
 Install pip, stress
 
   sudo apt install -y python-pip python3-pip stress
-  sudo pip3 install -y s-tui
+  sudo pip3 install s-tui
   sudo s-tui
 
 Install ansible
@@ -173,6 +172,10 @@ Install ack
 
   sudo apt install -y ack
 
+Install tree
+
+  sudo apt install -y tree
+  
 Install gcc-9
 
   sudo add-apt-repository ppa:jonathonf/gcc-9.0
@@ -181,3 +184,22 @@ Install gcc-9
 Program NVidia GPUs with OpenMP
 
   http://on-demand.gputechconf.com/gtc/2016/presentation/s6510-jeff-larkin-targeting-gpus-openmp.pdf
+
+Install npm and Purescript
+
+  curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
+## You may also need development tools to build native addons:
+     sudo apt-get install gcc g++ make
+## To install the Yarn package manager, run:
+     curl -sL https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
+     echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
+     sudo apt-get update && sudo apt-get install yarn
+  sudo apt-get install -y nodejs
+  sudo apt install -y npm
+  mkdir ~/.npm-global
+  npm config set prefix '~/.npm-global'
+  echo 'export PATH=~/.npm-global/bin:$PATH' » ~/.zshrc
+  npm install -g purescript
+  npm install -g pulp
+  npm install -g bower
+  npm install -g parcel-bundler
